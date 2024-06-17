@@ -47,6 +47,6 @@ app.get('/', (req, res)=>{
     res.status(200).send('hola a mi bot deymar')
 })
 
-app.listen(8080, () =>{
+app.listen(8000, () =>{
     console.log('Servidor iniciado...');
 });
