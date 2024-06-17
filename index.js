@@ -44,7 +44,7 @@ app.get('/webhook', (req, res) =>{
 });
 
 app.get('/', (req, res)=>{
-    res.status(200).send('hola a mi bot deymar')
+    res.status(200).send('hola a mi bot deymar huanca ')
 })
 
 const PORT = process.env.PORT || 3000;
