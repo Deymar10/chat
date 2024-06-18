@@ -65,8 +65,37 @@ function handleMessage(sender_psid, received_message){
 
     if(received_message.text){
         response = {
-            'text': `Tu mensaje fue : ${received_message.text} :)`
+            'text': `Tu mensaje fue : ${received_message.text} :) ahora mandame mas cosas`
         };
+    }else if(received_message.attachments){
+        const url = received_message.attachments[0].payload.url;
+        response = {
+            "attachment":{
+      "type":"template",
+      "payload":{
+        "template_type":"generic",
+        "elements":[
+           {
+            "title":"confirma tu imagen",
+            "image_url":url,
+            "subtitle":"Este es un ejemplo de prueba",
+
+            "buttons":[
+              {
+                "type":"postback",
+                "title":"Si!",
+                "payload":"yes"
+              },{
+                "type":"postback",
+                "title":"No",
+                "payload":"no"
+              }              
+            ]      
+          }
+        ]
+      }
+    }
+        }
     }
 
     callSendAPI(sender_psid, response);
