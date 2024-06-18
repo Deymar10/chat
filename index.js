@@ -101,7 +101,15 @@ function handleMessage(sender_psid, received_message){
     callSendAPI(sender_psid, response);
 }
 function handlePostback(sender_psid, received_postback){
-    
+    let response = '';
+
+    const payload = received_postback.payload;
+
+    if(payload === 'yes'){
+        response = {'text': 'Muchas gracias por la foto :)'};
+    }else if(payload === 'no'){
+        response = {'text': 'No te preocupes, manda otra foto'};
+    }
 }
 function callSendAPI(sender_psid, response){
     const requestBody = {
