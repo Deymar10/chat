@@ -68,6 +68,8 @@ function handleMessage(sender_psid, received_message){
             'text': `Tu mensaje fue : ${received_message.text} :)`
         };
     }
+
+    callSendAPI(sender_psid, response);
 }
 function handlePostback(sender_psid, received_postback){
     
