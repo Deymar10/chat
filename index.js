@@ -110,6 +110,8 @@ function handlePostback(sender_psid, received_postback){
     }else if(payload === 'no'){
         response = {'text': 'No te preocupes, manda otra foto'};
     }
+
+    callSendAPI(sender_psid, response);
 }
 function callSendAPI(sender_psid, response){
     const requestBody = {
