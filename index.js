@@ -122,7 +122,7 @@ function callSendAPI(sender_psid, response){
     };
 
     request({
-        'uri':'https://graph.facebook.com/v2.6/me/messages',
+        'uri':'https://graph.facebook.com/v20.0/me/messages',
         'qs':{'access_token': PAGE_ACCESS_TOKEN},
         'method': 'POST',
         'json': requestBody
