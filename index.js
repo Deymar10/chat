@@ -61,7 +61,7 @@ app.get('/', (req, res)=>{
 })
 
 function handleMessage(sender_psid, received_message){
-    let responde;
+    let response;
 
     if(received_message.text){
         response = {
@@ -89,7 +89,7 @@ function callSendAPI(sender_psid, response){
         if(!err){
             console.log('mensaje enviado de vuelta');
         }else{
-            console.log('Imposible enviar mensaje :(');
+            console.log('Imposible enviar mensaje :(',err);
         }
     });
 
